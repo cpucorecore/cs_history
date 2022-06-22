@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-// @PropertySource("classpath:application.yml")
 public class BeanClient {
   Logger logger = LoggerFactory.getLogger(BeanClient.class);
 
@@ -24,9 +23,8 @@ public class BeanClient {
   @Value("${app.GroupId}")
   private Integer groupId;
 
-  //  @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
   @Bean
-  public Client getClient() {
+  public Client client() {
     ConfigOption configOption = null;
     try {
       configOption = Config.load(configFilePath, SM_TYPE);
@@ -39,7 +37,7 @@ public class BeanClient {
   }
 
   @Bean
-  public BcosSDK getBcosSDK() {
+  public BcosSDK bcosSDK() {
     ConfigOption configOption = null;
     try {
       configOption = Config.load(configFilePath, SM_TYPE);

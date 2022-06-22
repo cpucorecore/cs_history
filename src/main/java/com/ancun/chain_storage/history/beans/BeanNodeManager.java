@@ -15,7 +15,7 @@ public class BeanNodeManager {
   @Autowired private Client client;
 
   @Bean
-  public NodeManager getNodeManager() {
+  public NodeManager nodeManager() {
     return NodeManager.load(nodeManagerAddress, client, client.getCryptoSuite().getCryptoKeyPair());
   }
 }

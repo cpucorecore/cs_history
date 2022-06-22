@@ -12,13 +12,13 @@ public class BeanTables {
 
   @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
   @Bean
-  public UserActionEventCallback getUserActionEventCallback() {
+  public UserActionEventCallback userActionEventCallback() {
     return new UserActionEventCallback();
   }
 
   @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
   @Bean
-  public NodeActionEventCallback getNodeActionEventCallback() {
+  public NodeActionEventCallback nodeActionEventCallback() {
     return new NodeActionEventCallback();
   }
 }

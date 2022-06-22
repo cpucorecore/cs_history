@@ -51,7 +51,6 @@ public class NodeActionEventCallback implements EventCallback {
                     event.get(2).toString(),
                     log.getTransactionHash(),
                     Long.valueOf(timestamp.substring(2), 16).longValue());
-
             nodeActionRepository.save(nodeAction);
           }
         } catch (ABICodecException e) {

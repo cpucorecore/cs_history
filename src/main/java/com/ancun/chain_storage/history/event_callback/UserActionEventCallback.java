@@ -51,7 +51,6 @@ public class UserActionEventCallback implements EventCallback {
                     event.get(2).toString(),
                     log.getTransactionHash(),
                     Long.valueOf(timestamp.substring(2), 16).longValue());
-
             userActionRepository.save(userAction);
           }
         } catch (ABICodecException e) {

@@ -15,7 +15,7 @@ public class BeanUserManager {
   @Autowired private Client client;
 
   @Bean
-  public UserManager getUserManager() {
+  public UserManager userManager() {
     return UserManager.load(userManagerAddress, client, client.getCryptoSuite().getCryptoKeyPair());
   }
 }
